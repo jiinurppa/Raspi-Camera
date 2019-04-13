@@ -21,8 +21,6 @@ import os
 import math
 from picamera import PiCamera
 from time import sleep
-from PIL import Image
-from PIL import ImageStat
 from fractions import Fraction
 
 # Setup
