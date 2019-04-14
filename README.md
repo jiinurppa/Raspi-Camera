@@ -1,17 +1,21 @@
 # Raspi-Camera
-Notes for Rasbian &amp; Raspberry Pi Camera Module
+Notes for Rasbian &amp; Raspberry Pi Camera Module. Tested on **Raspberry Pi 3 B+**.
 
 ## Watch Live Feed
 Requirements: mplayer
 1. From **desktop** run `nc -l 8111 | mplayer -fps 30 -vf scale=1920:1080 -nosound -cache 4096 -`
 2. From **Raspberry Pi** replace `desktop-ip-here` with correct IP and run `raspivid -t 0 -w 1920 -h 1080 -fps 30 -o - | nc desktop-ip-here 8111`
 
-**Tip:** Get desktop IP with:
+**Tip** Get desktop IP with:
 * Linux: `hostname -I`
 * macOS: `ipconfig getifaddr en0` (ethernet) or `ipconfig getifaddr en1` (wifi)
 
 ## Record Time Lapse
 Requirements: External drive for pictures, screen, ffmpeg
+
+**Tip** I suggest disabling leds on the Raspberry Pi so you don't accidentally get reflections of them on camera:
+* Disable red PWR led by running `sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'`
+* Disable green ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
 
 1. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
 2. Save the following script as `timelapse.py`:
