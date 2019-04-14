@@ -49,7 +49,7 @@ while current_pic < amount:
     camera.capture(folder_path + "/" + '{0:0>4d}'.format(current_pic) + ".jpg");
     camera.close();
     current_pic += 1;
-    print("Captured picture " + str(current_pic));
+    print("Captured picture " + str(current_pic) + "/" + str(amount));
     sleep(60 - hold);
 
 print("Time lapse done!");
