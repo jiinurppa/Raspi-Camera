@@ -1,7 +1,6 @@
 # Raspi-Camera
 Notes for Rasbian &amp; Raspberry Pi Camera Module. Tested on **Raspberry Pi 3 B+**.
 
-___
 
 ## Watch Live Feed
 Requirements: `mplayer` (for desktop)
@@ -12,7 +11,6 @@ Requirements: `mplayer` (for desktop)
 * Linux: `hostname -I`
 * macOS: `ipconfig getifaddr en0` (ethernet) or `ipconfig getifaddr en1` (wifi)
 
-___
 
 ## Record Time Lapse
 Requirements: External drive for pictures, `screen`, `ffmpeg`
