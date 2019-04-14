@@ -1,5 +1,5 @@
 # Raspi-Camera
-Notes for Rasbian &amp; Raspberry Pi Camera Module. Tested on **Raspberry Pi 3 B+**.
+Notes for Raspbian &amp; Raspberry Pi Camera Module. Tested on **Raspberry Pi 3 B+**.
 
 
 ## Watch Live Feed
