@@ -20,7 +20,7 @@ Requirements: External drive for pictures, `screen`, `ffmpeg`
 * Disable **green** ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
 
 
-1. Creat mount point for external drive by running `sudo mkdir /media/exfat`
+1. Creat mount point for external drive with `sudo mkdir /media/exfat`
 2. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
 3. Save the following script as `timelapse.py`:
 ```python
@@ -54,9 +54,9 @@ while current_pic < amount:
 
 print("Time lapse done!");
 ```
-4. Run `chmod u+x timelapse.py`
-5. Run `screen -S timelapse`
-6. Run `./timelapse.py`
+4. Make script executable by running `chmod u+x timelapse.py`
+5. Start screen by running `screen -S timelapse`
+6. Run script with `./timelapse.py`
 7. Detach from screen with `Ctrl-a` + `d` and let the script run in the background
 8. Check the progress by running `screen -r timelapse`, when it's done you should see `Time lapse done!`
 9. Exit screen with `exit` and run `cd /media/exfat/timelapse`
