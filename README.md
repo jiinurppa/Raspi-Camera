@@ -16,8 +16,8 @@ ___
 Requirements: External drive for pictures, screen, ffmpeg
 
 ❗ I suggest disabling leds on the Raspberry Pi so you don't accidentally get reflections of them on camera:
-* Disable red PWR led by running `sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'`
-* Disable green ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
+* Disable **red** PWR led by running `sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'`
+* Disable **green** ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
 
 
 1. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
