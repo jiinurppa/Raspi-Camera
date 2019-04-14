@@ -20,8 +20,9 @@ Requirements: External drive for pictures, `screen`, `ffmpeg`
 * Disable **green** ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
 
 
-1. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
-2. Save the following script as `timelapse.py`:
+1. Creat mount point for external drive by running `sudo mkdir /media/exfat`
+2. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
+3. Save the following script as `timelapse.py`:
 ```python
 #!/usr/bin/env python
 import os
@@ -53,10 +54,10 @@ while current_pic < amount:
 
 print("Time lapse done!");
 ```
-3. Run `chmod u+x timelapse.py`
-4. Run `screen -S timelapse`
-5. Run `./timelapse.py`
-6. Detach from screen with `Ctrl-a` + `d` and let the script run in the background
-7. Check the progress by running `screen -r timelapse`, when it's done you should see `Time lapse done!`
-8. Exit screen with `exit` and run `cd /media/exfat/timelapse`
-9. Create a video by running `ffmpeg -f image2 -i %04d.jpg -r 3 -s 1920x1080 -b 2097152 timelapse.avi`
+4. Run `chmod u+x timelapse.py`
+5. Run `screen -S timelapse`
+6. Run `./timelapse.py`
+7. Detach from screen with `Ctrl-a` + `d` and let the script run in the background
+8. Check the progress by running `screen -r timelapse`, when it's done you should see `Time lapse done!`
+9. Exit screen with `exit` and run `cd /media/exfat/timelapse`
+10. Create a video by running `ffmpeg -f image2 -i %04d.jpg -r 3 -s 1920x1080 -b 2097152 timelapse.avi`
