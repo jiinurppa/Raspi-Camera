@@ -77,7 +77,7 @@ print('Time lapse done!');
 9. Detach from screen with `Ctrl-a` + `d` and let the script run in the background
 10. Check the progress by running `screen -r timelapse`, when it's done you should see `Time lapse done!`
 11. Exit screen with `exit` and run `cd /media/exfat/timelapse`
-12. Create a video by running `ffmpeg -r 24 -f image2 -i %08d.jpg -r 24 -s 1920x1080 -b 2097152 timelapse.avi`
+12. Create a video by running `ffmpeg -r 24 -f image2 -i %08d.jpg -r 24 -s 1920x1080 -c:v libx264 -preset slow -crf 20 timelapse.mkv`
 
 
 ## Record Time Lapse Using PiCamera
@@ -130,4 +130,4 @@ print('Time lapse done!');
 7. Detach from screen with `Ctrl-a` + `d` and let the script run in the background
 8. Check the progress by running `screen -r timelapse`, when it's done you should see `Time lapse done!`
 9. Exit screen with `exit` and run `cd /media/exfat/timelapse`
-10. Create a video by running `ffmpeg -r 24 -f image2 -i %08d.jpg -r 24 -s 1920x1080 -b 2097152 timelapse.avi`
+10. Create a video by running `ffmpeg -r 24 -f image2 -i %08d.jpg -r 24 -s 1920x1080 -c:v libx264 -preset slow -crf 20 timelapse.mkv`
