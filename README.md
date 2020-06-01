@@ -6,7 +6,9 @@ Notes for Raspbian &amp; Raspberry Pi Camera Module. Tested on **Raspberry Pi 3 
 
 ## Watch Live Feed
 Requirements: `mplayer` (for desktop)
-1. From **desktop** run `nc -l 8111 | mplayer -fps 30 -vf scale=1920:1080 -nosound -cache 4096 -`
+1. From **desktop** run either
+   1. `nc -l 8111 | mpv --no-correct-pts --fps=30 --no-audio -` or
+   2. `nc -l 8111 | mplayer -fps 30 -vf scale=1920:1080 -nosound -cache 4096 -`
 2. From **Raspberry Pi** replace `desktop-ip-here` with correct IP and run `raspivid -t 0 -w 1920 -h 1080 -fps 30 -o - | nc desktop-ip-here 8111`
 
 ❗ Get desktop IP with:
