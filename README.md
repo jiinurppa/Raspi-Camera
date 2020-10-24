@@ -33,9 +33,9 @@ These notes are for the **NoIR** module. If you're using a regular camera, remov
 ```python
 #!/usr/bin/env python3
 import os
+import time
 from datetime import datetime, timezone
 from suntime import Sun, SunTimeException
-from time import sleep
 
 # Setup Camera
 width = 1920
@@ -53,6 +53,7 @@ if not os.path.isdir(folder_path):
     os.mkdir(folder_path)
 
 while current_pic < amount:
+    start_time = time.perf_counter()
     command = f'raspistill -w {width} -h {height} -awb greyworld '
     night = False
     try:
@@ -70,11 +71,12 @@ while current_pic < amount:
     current_pic += 1
     timestamp = f'{datetime.now():[%H:%M:%S %d.%m.%Y]}'
     print(f'{timestamp} Captured picture {current_pic}/{amount} Night exposure: {night}')
+    end_time = time.perf_counter()
+    elapsed_time = end_time - start_time
     if current_pic < amount:
-        sleep(delay)
+        time.sleep(delay - elapsed_time)
 
 print('Time lapse done!')
-
 ```
 5. Change `latitude` and `longitude` to match your location
 6. Make script executable by running `chmod u+x timelapse.py`
