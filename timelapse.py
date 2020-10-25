@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from suntime import Sun, SunTimeException
 
 # Setup Camera
+quality = 100
 width = 1920
 height = 1080
 amount = 1440
@@ -21,7 +22,7 @@ if not os.path.isdir(folder_path):
 
 while current_pic < amount:
     start_time = time.perf_counter()
-    command = f'raspistill -w {width} -h {height} -awb greyworld '
+    command = f'raspistill -w {width} -h {height} -q {quality} -awb greyworld '
     night = False
     try:
         sunrise = sun.get_sunrise_time()
