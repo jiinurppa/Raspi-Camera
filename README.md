@@ -89,7 +89,7 @@ print('Time lapse done!')
 12. Create a video by running `ffmpeg -r 24 -f image2 -i %08d.jpg -r 24 -s 1920x1080 -c:v libx264 -preset slow -crf 20 timelapse.mkv`
 
 
-## Record Time Lapse Using PiCamera
+## Record Time Lapse Using PiCamera (old)
 Requirements: External drive for pictures, `screen`, `ffmpeg`
 
 You'll get better results (and `greyworld` support) using the `raspistill` version above. 
