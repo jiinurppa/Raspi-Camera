@@ -29,7 +29,7 @@ These notes are for the **NoIR** module. If you're using a regular camera, remov
 1. Install [SunTime](https://github.com/SatAgro/suntime) by running `pip3 install suntime`
 2. Create mount point for external drive with `sudo mkdir /media/exfat`
 3. Mount your external drive by running `sudo mount -t auto /dev/sda1 /media/exfat`
-4. Save the following script as `timelapse.py`:
+4. Save the following script as `timelapse.py` or download it with `wget https://raw.githubusercontent.com/jiinurppa/Raspi-Camera/master/timelapse.py`:
 ```python
 #!/usr/bin/env python3
 import os
