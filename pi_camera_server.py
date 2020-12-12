@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # From: https://github.com/jiinurppa/Raspi-Camera
 # Watch live feed from your Raspberry Pi
 # Example: http://192.168.0.2:8080/stream?ip=192.168.0.3&width=1280&height=720
@@ -12,7 +12,7 @@
 #   vertical_flip   = flip video vertically (default: false)
 #   horizontal_flip = flip video horizontally (default: false)
 #
-# Requires Bottle: pip install bottle
+# Requires Bottle: pip3 install bottle
 # Bottle docs: https://bottlepy.org/docs/dev/
 from bottle import route, run, request
 import subprocess
