@@ -17,6 +17,7 @@
 from bottle import route, run, request
 import subprocess
 import ipaddress
+import socket
 import re
 
 
@@ -57,8 +58,10 @@ def stream():
     if request.query.hf is 'true':
         horizontal_flip = '-hf'
     subprocess.run(f'raspivid -t 0 -w {width} -h {height} -fps {fps} {awb} {vertical_flip} {horizontal_flip} -o - '
-                   f'| nc {ip} {port}')
+                   f'| nc {ip} {port}', shell=True)
     return 'OK'
 
-
-run(host='localhost', port=8080, debug=True)
+host_name = socket.gethostname()
+host_addr = socket.gethostbyname(host_name)
+host_addr = socket.gethostbyname(host_name + ".local")
+run(host=host_addr, port=8080, debug=True)
