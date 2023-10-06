@@ -25,8 +25,8 @@ Requirements: External drive for pictures, `screen`, `ffmpeg`
 These notes are for the **NoIR** module. If you're using a regular camera, remove the `-awb greyworld` option.
 
 ❗ I suggest disabling leds on the Raspberry Pi so you don't accidentally get reflections of them on camera:
-* Disable **red** PWR led by running `sudo sh -c 'echo 0 > /sys/class/leds/led1/brightness'`
-* Disable **green** ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/led0/brightness'`
+* Disable **red** PWR led by running `sudo sh -c 'echo 0 > /sys/class/leds/PWR/brightness'`
+* Disable **green** ACT led by running `sudo sh -c 'echo 0 > /sys/class/leds/ACT/brightness'`
 
 
 1. Install [SunTime](https://github.com/SatAgro/suntime) by running `pip3 install suntime`
